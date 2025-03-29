@@ -1,10 +1,59 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
+import { MaterialIcons} from '@expo/vector-icons'
 
 export default function Home() {
     return(
-        <View>
-            <Text>Pagina Home</Text>
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <Image 
+                    source={require('../../Assets/banner.png')}
+                    style={styles.image}
+                />
+
+                <View style={styles.textContainer}>
+                    <Text style={styles.text}>TÊNIS</Text>
+                    <Text style={styles.text}>•</Text>
+                    <Text style={[styles.text, {color: '#cececf'}]}>MASCULINO</Text>
+                    <TouchableOpacity style={{position: 'absolute', right: 0, alignSelf: 'center'}}> 
+                        <MaterialIcons
+                            name="filter-list"
+                            size={24}
+                            color="#000"
+                        />
+                    </TouchableOpacity>
+                </View>
+            </View>
+
+            <View style={styles.line}/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        width: '100%',
+        backgroundColor: '#fff'
+    },
+    header: {
+        marginBottom: 8
+    },
+    image: {
+        width: '100%'
+    },
+    textContainer: {
+        flexDirection: 'row',
+        marginVertical:  '5%',
+        marginHorizontal: '5%'
+    },
+    text: {
+        fontFamily: 'Anton_400Regular',
+        fontSize: 26,
+        marginHorizontal: '1%'
+    },
+    line: {
+        borderBlockColor: '#d8d8d8',
+        borderBottomWidth: 2
+    }
+})
