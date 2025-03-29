@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Button } from "react-native";
 import Dot from "../../Components/Dot";
 import SizeButton from "../../Components/SizeButton";
+import ButtonTip from '../../Components/Button'
+import ShelfPageProduct from "../../Components/ShelfPageProduct";
 
 export default function Detail({ navigation }) {
 
@@ -38,6 +40,27 @@ export default function Detail({ navigation }) {
                         <SizeButton>44</SizeButton>
                     </ScrollView>
                 </View>
+
+                <View style={styles.textContent}>
+                    <Text style={styles.textTitle}>Nike Downshifter 10</Text>
+                    <Text style={styles.textContent}>
+                        O Tênis Nike Masculino Downshifter 10 traz amortecimento e suporte atualizados,
+                        para garantir uma corrida estável e confortável. Esse tênis de corrida é
+                        confeccionado em material respirável, cabedal em couro sintético
+                    </Text>
+                    <Text style={styles.textList}>
+                        - Categoria: Amortecimento
+                    </Text>
+                    <Text style={styles.textList}>
+                        - Amortecimento: Mesh
+                    </Text>
+                </View> 
+
+                <ButtonTip/>
+
+                <View style={styles.line}/>
+                <ShelfPageProduct/>
+                
             </View>
         </ScrollView>
     )
@@ -59,5 +82,24 @@ const styles = StyleSheet.create({
     dotContainer: {
         flexDirection: 'row',
         marginVertical: '7%'
+    },
+    textContent: {
+        fontSize: 16,
+        lineHeight: 25,
+        marginVertical: '2%',
+        paddingHorizontal: '2%'
+    },
+    textTitle: {
+        fontSize: 22,
+        marginVertical: 25
+    },
+    textList: {
+        fontSize: 16,
+        lineHeight: 25,
+    },
+    line: {
+        borderWidth: 1,
+        borderBottomColor: '#ddd',
+        marginVertical: '3%'
     }
 })
